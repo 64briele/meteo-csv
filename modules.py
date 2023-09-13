@@ -17,6 +17,7 @@ def estraiData(file):
     return giorno
 
 def plot(filecsv):
+    data = estraiData(filecsv)
     with open(filecsv, newline="", encoding="ISO-8859-1") as filecsv:
         lettore = csv.reader(filecsv,delimiter=",")
         #header = next(lettore)
@@ -56,7 +57,7 @@ def plot(filecsv):
 
         fig, axs = plt.subplots(3)
         #array ad 1 dimensione di grafici
-        fig.suptitle('Dati Centralina Meteo '+estraiData(filecsv))
+        fig.suptitle('Dati Centralina Meteo ' + data) 
         axs[0].plot(xlist, pa_10min)
         axs[0].set_title("Pressione Atmosferica")
         axs[1].plot(xlist, ta_10min, 'tab:orange')
@@ -72,5 +73,4 @@ def plot(filecsv):
 
     plt.show()
 
-estraiData('./csv/L0220526.csv')
-plot('./csv/L0220526.csv')
+plot('./csv/L0220527.csv')

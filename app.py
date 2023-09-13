@@ -5,6 +5,8 @@ import os
 root = tk.Tk()
 root.title('Demo Centralina')
 root.geometry('800x600+50+50')
+root.columnconfigure(0, weight=1)
+root.columnconfigure(0, weight=1)
 
 columns = ('nome_file','data_file')
 tree = ttk.Treeview(root, columns=columns, show='headings')
