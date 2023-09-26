@@ -4,16 +4,10 @@ import os
 
 
 def estraiData(file):
-    print(file)
     giorno_gg = file[-6:-4]
     giorno_mm = file[-8:-6]
     giorno_aa = file[-10:-8]
     giorno = giorno_gg+'/'+giorno_mm+'/'+giorno_aa
-    #print(file)
-    #print(giorno_gg)
-    #print(giorno_mm)
-    #print(giorno_aa)
-    #print(giorno)
     return giorno
 
 def plot(filecsv):
@@ -25,7 +19,7 @@ def plot(filecsv):
         dati = [(riga[0],riga[2],riga[4],riga[6]) for riga in lettore]
         #isola le colonne importanti che considero per i grafici
         #riga[0] (data e ora) serve perchè altrimenti i valori sull'asse x non sono in ordine
-        #per ciò devo considerarla e poi rimuovere la data
+        #perciò devo considerarla e poi rimuovere la data
 
         minuti = 10
         intervallo = int(minuti/10)
@@ -72,5 +66,3 @@ def plot(filecsv):
         axs[2].set_xticks([])   
 
     plt.show()
-
-plot('./csv/L0220527.csv')
