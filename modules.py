@@ -1,3 +1,5 @@
+#per ora lo script funziona solo con i file di tipo "L0", devo aggiungere l'implementazione (ovvero quali righe selezionare) per i file di tipo "L6"
+
 import csv
 import matplotlib.pyplot as plt
 import os
@@ -67,3 +69,5 @@ def plot(filecsv):
         axs[2].set_xticks([])   
 
     plt.show()
+
+
