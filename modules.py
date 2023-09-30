@@ -68,6 +68,6 @@ def plot(filecsv):
         axs[1].set_xticks([])  
         axs[2].set_xticks([])   
 
-    plt.show()
+        plt.show()
 
 
