@@ -3,12 +3,15 @@ from tkinter import ttk
 import os
 from modules import estraiData
 
+def select():
+    curItems = tree.selection()
+    print(len(curItems))
+
 root = tk.Tk()
 root.title('Demo Centralina')
-root.geometry('800x600+50+50')
-root.columnconfigure(1, weight=0)
+root.resizable(False, False)
+root.columnconfigure(0, weight=0)
 root.rowconfigure(0, weight=0)
-root.resizable(0, 0)
 
 columns = ('nome_file','data_file')
 tree = ttk.Treeview(root, columns=columns, show='headings')
@@ -23,10 +26,14 @@ for file in files:
 for value in tree_values:
     tree.insert('', tk.END, values=value)
 
+tree.bind("<Key>", lambda e: select())
 tree.grid(row=0, column=0, sticky='nsew')
 
 scrollbar = ttk.Scrollbar(root, orient=tk.VERTICAL, command=tree.yview)
 tree.configure(yscroll=scrollbar.set)
 scrollbar.grid(row=0, column=1, sticky='nsew')
+
+genera_grafico = ttk.Button(root, text="Genera Grafico")
+genera_grafico.grid(row=1, column=2)
 
 root.mainloop()

@@ -10,6 +10,7 @@ def estraiData(file):
     giorno = giorno_gg+'/'+giorno_mm+'/'+giorno_aa
     return giorno
 
+
 def plot(filecsv):
     data = estraiData(filecsv)
     with open(filecsv, newline="", encoding="ISO-8859-1") as filecsv:
